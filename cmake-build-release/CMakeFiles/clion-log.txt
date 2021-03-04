@@ -1,4 +1,0 @@
-C:\Users\0xffset\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7148.70\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - NMake Makefiles" C:\Dev\Standard-Library-Implementation
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Dev/Standard-Library-Implementation/cmake-build-release
