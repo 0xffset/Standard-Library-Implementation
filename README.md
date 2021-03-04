@@ -1,9 +1,7 @@
-# Custom-Implementations
-This repository contains custom implementations of concepts from programming, computer science and other libraries (like the C++ standard library) which I made to learn and practice or/and out of curiousity and fun. <br>
+# Standard Library Implementations
+This repository contains a custom standard library implementation which I made to learn and practice or/and out of curiosity and fun. <br>
 Documentation for the functions/methods is provided via doxygen descriptions from inside the IDE/text editor.
 #### Project namespace: oxf
-
-<br>
 
 ## Vector
 ##### TODO: Add construction/assignment with iterable type
@@ -36,8 +34,6 @@ Header only implementation of a dynamic sized heap (sometimes priority queue).
 ```cpp
 oxf::heap<T> heap;
 ```
-
-<br>
 
 ## Thanks, Credits and Sources
 Thanks to [Martin York](https://github.com/Loki-Astari) for the really good [series on vectors](https://lokiastari.com/blog/2016/02/27/vector/index.html). <br>
