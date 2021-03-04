@@ -5,7 +5,7 @@
 #include <utility>
 #include <stdexcept>
 
-#define OXF_VECTOR_ASSERT_INDEX(i)  if (i >= itemCounter) { throw std::runtime_error("index out of range"); }
+#define OXF_VECTOR_ASSERT_INDEX(i)  if (i >= itemCounter) { throw std::runtime_error("val out of range"); }
 
 #define OXF_VECTOR_INTERNAL_SIMPLE_COPY_RETURN(b) typename std::enable_if<std::is_nothrow_move_constructible<X>::value == b>::type
 #define OXF_VECTOR_INTERNAL_MOVE_COPY_RETURN(b) typename std::enable_if<std::is_nothrow_move_constructible<X>::value == b>::type
@@ -188,7 +188,7 @@ namespace oxf {
 		}
 
 		/**
-		 * Erases the item at index and shifts all trailing items one to the left <br>
+		 * Erases the item at val and shifts all trailing items one to the left <br>
 		 * Destructs item if not trivial destructible
 		 * @tparam X - Datatype of data stored in Vector
 		 * @param index - Item to be erased
@@ -240,7 +240,7 @@ namespace oxf {
 		}
 
 		/**
-		 * Inserts an item at index, copy shifting already existing items to the right
+		 * Inserts an item at val, copy shifting already existing items to the right
 		 * using Vector&lt;T&gt;::internalShiftRight&lt;T&gt;(size_t) <br>
 		 * Destructs items if not trivial destructible
 		 * @tparam X - Datatype of data stored in Vector
@@ -290,7 +290,7 @@ namespace oxf {
 		}
 
 		/**
-		 * Constructs item at index in buffer, shifting already existing items one to the right
+		 * Constructs item at val in buffer, shifting already existing items one to the right
 		 * using Vector&lt;T&gt;::internalShiftRight&lt;T&gt;(size_t) <br>
 		 * Destructs items if not trivial destructible
 		 * @tparam X - Datatype of data stored in Vector
@@ -334,7 +334,7 @@ namespace oxf {
 		}
 
 		/**
-		 * Copies item and replaces index i with it <br>
+		 * Copies item and replaces val i with it <br>
 		 * Destructs the item if not trivial destructible
 		 * @tparam X - Datatype of data stored in Vector
 		 * @param i - Index to replace
@@ -512,7 +512,7 @@ namespace oxf {
 		// * Item Access *
 		// ***************
 		/**
-		 * Returns item reference at index i
+		 * Returns item reference at val i
 		 * @warning Doesn't check bounds
 		 * @param i - Index
 		 * @return Item reference
@@ -522,7 +522,7 @@ namespace oxf {
 		}
 
 		/**
-		 * Returns const item reference at index i
+		 * Returns const item reference at val i
 		 * @warning Doesn't check bounds
 		 * @param i - Index
 		 * @return Item reference
@@ -532,7 +532,7 @@ namespace oxf {
 		}
 
 		/**
-		 * Returns item reference at index i
+		 * Returns item reference at val i
 		 * @param i - Index
 		 * @return Item reference
 		 */
@@ -543,7 +543,7 @@ namespace oxf {
 		}
 
 		/**
-		 * Returns const item reference at index i
+		 * Returns const item reference at val i
 		 * @param i - Index
 		 * @return Item reference
 		 */
@@ -633,7 +633,7 @@ namespace oxf {
 		}
 
 		/**
-		 * Erases item at index i <br>
+		 * Erases item at val i <br>
 		 * Destructs item if not trivial destructible
 		 * @param i - Index
 		 */
@@ -644,7 +644,7 @@ namespace oxf {
 		}
 
 		/**
-		 * Copy inserts item at index i
+		 * Copy inserts item at val i
 		 * @param i - Index
 		 * @param item - Item to be inserted
 		 */
@@ -655,7 +655,7 @@ namespace oxf {
 		}
 
 		/**
-		 * Move inserts item at index i
+		 * Move inserts item at val i
 		 * @param i - Index
 		 * @param item - Item to be inserted
 		 */
@@ -737,7 +737,7 @@ namespace oxf {
 		}
 
 		/**
-		 * Constructs item in place at index i, shifting already existing item and all trailing items to the right
+		 * Constructs item in place at val i, shifting already existing item and all trailing items to the right
 		 * @tparam Args - Unknown amount of arguments and their type
 		 * @param i - Index
 		 * @param args - Constructor arguments
@@ -750,7 +750,7 @@ namespace oxf {
 		}
 
 		/**
-		 * Copies item and replaces index i with it
+		 * Copies item and replaces val i with it
 		 * @param i - Index to replace
 		 * @param item - Item to replace with
 		 */
@@ -761,7 +761,7 @@ namespace oxf {
 		}
 
 		/**
-		 * Moves item and replaces index i with it
+		 * Moves item and replaces val i with it
 		 * @param i - Index to replace
 		 * @param item - Item to replace with
 		 */
@@ -772,7 +772,7 @@ namespace oxf {
 		}
 
 		/**
-		 * Constructs item and replaces index i with it
+		 * Constructs item and replaces val i with it
 		 * @tparam Args - Unknown amount of arguments and their type
 		 * @param i - Index to replace
 		 * @param args - Constructor arguments

@@ -5,7 +5,7 @@
 #include <utility>
 #include <stdexcept>
 
-#define OXF_ARRAY_ASSERT_INDEX(i)  if (i >= bufferSize) { throw std::runtime_error("index out of range"); }
+#define OXF_ARRAY_ASSERT_INDEX(i)  if (i >= bufferSize) { throw std::runtime_error("val out of range"); }
 #define OXF_ARRAY_INTERNAL_CLEAR_ITEMS_RETURN(b) typename std::enable_if<std::is_trivially_destructible<X>::value == b>::type
 #define OXF_ARRAY_INTERNAL_INSERT_RETURN(b) typename std::enable_if<std::is_trivially_destructible<X>::value == b>::type
 #define OXF_ARRAY_INTERNAL_EMPLACE_RETURN(b) typename std::enable_if<std::is_trivially_destructible<X>::value == b>::type
@@ -60,7 +60,7 @@ namespace oxf {
         }
 
         /**
-         * Inserts an item at index <br>
+         * Inserts an item at val <br>
          * Destructs items if not trivial destructible
          * @tparam X - Datatype of data stored in array
          * @param index - Index of new item
@@ -98,7 +98,7 @@ namespace oxf {
         }
 
         /**
-         * Constructs item at index in buffer <br>
+         * Constructs item at val in buffer <br>
          * Destructs items if not trivial destructible
          * @tparam X - Datatype of data stored in array
          * @tparam Args - Unknown amount of arguments and their type
@@ -224,7 +224,7 @@ namespace oxf {
         // * Item Access *
         // ***************
         /**
-         * Returns item reference at index i
+         * Returns item reference at val i
          * @warning Doesn't check bounds
          * @param i - Index
          * @return Item reference
@@ -234,7 +234,7 @@ namespace oxf {
         }
 
         /**
-         * Returns item reference at index i
+         * Returns item reference at val i
          * @param i - Index
          * @return Item reference
          */
@@ -302,7 +302,7 @@ namespace oxf {
         }
 
         /**
-         * Copy inserts item at index i
+         * Copy inserts item at val i
          * @param item - Item to be inserted
          * @param i - Index
          */
@@ -313,7 +313,7 @@ namespace oxf {
         }
 
         /**
-         * Move inserts item at index i
+         * Move inserts item at val i
          * @param item - Item to be inserted
          * @param i - Index
          */
@@ -333,7 +333,7 @@ namespace oxf {
         }
 
         /**
-         * Constructs item in place at index i
+         * Constructs item in place at val i
          * @tparam Args - Unknown amount of arguments and their type
          * @param i - Index
          * @param args - Constructor arguments

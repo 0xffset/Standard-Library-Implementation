@@ -74,11 +74,11 @@ namespace oxf {
 
 			/**
 			 * pos: left child of parent
-			 * child: index of child that fits the condition (left or right)
+			 * child: val of child that fits the condition (left or right)
 			 *
 			 * While swaps happen and there are two children left continue loop.
 			 * Get best suited children and swap with parent (pos >> 1) if the swap condition applies, then adjust
-			 * pos to the child of child (consider index for left and right child and adjust accordingly)
+			 * pos to the child of child (consider val for left and right child and adjust accordingly)
 			 */
 			while (data.size() > pos + 1 &&
 			       this->internalSwapOnDemand((child = this->internalGetCorrectChild(pos, pos + 1)), pos >> 1)) {
