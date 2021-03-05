@@ -11,3 +11,6 @@ add_subdirectory(Data_Structures/Vector)
 
 # Testing
 add_subdirectory(Testing)
+
+# Manual Testing
+add_subdirectory(Testing/Manual_Testing)

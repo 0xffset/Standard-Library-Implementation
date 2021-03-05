@@ -126,11 +126,20 @@ BOOST_AUTO_TEST_CASE(Swap) {
 	}
 }
 
-
 BOOST_AUTO_TEST_CASE(emplace) {
 	oxf::array<testObj, 2> arr;
 	arr.emplace(0, 0);
 	arr.emplace(1, 1);
 	BOOST_TEST((arr.at(0).status == CONSTRUCTOR && arr.at(0).val == 0));
 	BOOST_TEST((arr.at(1).status == CONSTRUCTOR && arr.at(1).val == 1));
+}
+
+BOOST_AUTO_TEST_CASE(Clear_Insert) {
+	oxf::array<std::string, 5> arr{"0", "1", "__", "3", "4"};
+	arr.clear();
+	arr.insert(2, "2");
+
+	BOOST_TEST(arr.at(1) != "1");
+	BOOST_TEST(arr.at(2) == "2");
+	BOOST_TEST(arr.at(3) != "3");
 }

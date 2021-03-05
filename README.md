@@ -1,7 +1,10 @@
 # Standard Library Implementations
 This repository contains a custom standard library implementation which I made to learn and practice or/and out of curiosity and fun. <br>
 Documentation for the functions/methods is provided via doxygen descriptions from inside the IDE/text editor.
-#### Project namespace: oxf
+
+#### Project Information
+- Project namespace: oxf
+- Automated testing using Boost.Test
 
 ## Vector
 ##### TODO: Add construction/assignment with iterable type
@@ -12,7 +15,6 @@ oxf::vector<T> vec;
 
 ## Array
 ##### TODO: Add construction/assignment with iterable type
-##### TODO: Fix insert bug causing memory access violations
 Header only implementation of an array.
 ```cpp
 oxf::array<T, N> arr;
