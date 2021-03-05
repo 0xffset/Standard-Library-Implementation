@@ -99,10 +99,6 @@ namespace oxf {
 		 */
 		template<class X>
 		OXF_ARRAY_INTERNAL_INSERT_RETURN(false) internalMoveInsert(size_t index, T &&item) {
-			std::cout << "1" << std::endl;
-			std::cout << typeid(buffer[index]).name() << std::endl;
-			std::cout << "2" << std::endl;
-
 			if (valid[index]) {
 				buffer[index].~T();
 			}
