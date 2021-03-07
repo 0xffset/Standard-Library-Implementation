@@ -50,7 +50,11 @@ namespace oxf {
 		}
 
 		template<class X>
-		OXF_ARRAY_INTERNAL_CLEAR_ITEMS_RETURN(true) internalClearItems() {}
+		OXF_ARRAY_INTERNAL_CLEAR_ITEMS_RETURN(true) internalClearItems() {
+			for (size_t i = 0; i < N; ++i) {
+				valid[i] = false;
+			}
+		}
 
 		/**
 		 * Copies an array into the current array
@@ -312,13 +316,6 @@ namespace oxf {
 		// *************
 		// * Modifiers *
 		// *************
-		/**
-		 * Clears the array <br>
-		 * Destructs all items if not trivial destructible
-		 */
-		void clear() {
-			this->internalClearItems<T>();
-		}
 
 		/**
 		 * Copy inserts item at val i
@@ -373,7 +370,12 @@ namespace oxf {
 		 * @return
 		 */
 		bool operator==(const array<T, N> &arr) {
-			return memcmp(buffer, arr.buffer, bufferSize * sizeof(T)) == 0;
+			for (size_t i = 0; i < N; ++i) {
+				if (buffer[i] != arr.buffer[i]) {
+					return false;
+				}
+			}
+			return true;
 		}
 
 		/**

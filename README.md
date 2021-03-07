@@ -14,7 +14,7 @@ oxf::vector<T> vec;
 ```
 
 ## Array
-##### TODO: Redo unit tests like vector
+##### TODO: Investigate "random" memory leaks
 ##### TODO: Add construction/assignment with iterable type
 Header only implementation of an array.
 ```cpp
