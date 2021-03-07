@@ -21,15 +21,6 @@ Header only implementation of an array.
 oxf::array<T, N> arr;
 ```
 
-## Disjoint Set
-### Not finished
-##### TODO: Add collapsing find
-##### TODO: Add documentation
-Header only implementation of a very basic disjoint set.
-```cpp
-oxf::disjoint_set<T> set;
-```
-
 ## Heap
 ##### TODO: Fix potential bugs
 ##### TODO: Add features if necessary
