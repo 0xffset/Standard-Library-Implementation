@@ -64,6 +64,15 @@ BOOST_AUTO_TEST_CASE(Square_Bracket_Access) {
 	for (size_t i = 0; i < 5; ++i) {
 		BOOST_TEST(arr[i] == i);
 	}
+	BOOST_CHECK_NO_THROW(arr[5]);
+}
+
+
+BOOST_AUTO_TEST_CASE(At_Access) {
+	oxf::array<int, 3> arr({0, 1, 2});
+	BOOST_TEST(arr.at(1) == 1);
+	BOOST_TEST(arr.at(2) == 2);
+	BOOST_CHECK_THROW(arr.at(3), std::runtime_error);
 }
 
 BOOST_AUTO_TEST_CASE(Iterators) {

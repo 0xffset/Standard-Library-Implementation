@@ -599,7 +599,7 @@ namespace oxf {
 
 		size_t capacity() const noexcept { return bufferSize; }
 
-		size_t maxCapacity() const noexcept { return SIZE_MAX; }
+		inline size_t maxCapacity() const noexcept { return SIZE_MAX; }
 
 		/**
 		 * Allocates more memory for the buffer <br>
@@ -793,7 +793,13 @@ namespace oxf {
 		 * @return
 		 */
 		bool operator==(const vector<T> &vec) {
-			return (itemCounter == vec.itemCounter) && (memcmp(buffer, vec.buffer, itemCounter * sizeof(T)) == 0);
+			// return (itemCounter == vec.itemCounter) && (memcmp(buffer, vec.buffer, itemCounter * sizeof(T)) == 0);
+			for (size_t i = 0; i < itemCounter; ++i) {
+				if (buffer[i] != vec.buffer[i]) {
+					return false;
+				}
+			}
+			return true;
 		}
 
 		/**

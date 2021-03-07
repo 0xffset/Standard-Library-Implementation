@@ -18,3 +18,4 @@ include_directories(${CMAKE_SOURCE_DIR}/Data_Structures/)
 
 # Test Cases
 add_subdirectory(Data_Structures/Array)
+add_subdirectory(Data_Structures/Vector)
